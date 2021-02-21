@@ -11,7 +11,7 @@ namespace CampgroundFinder.DataAccess
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=DESKTOP-8SN80FP; Database=CampgroundDb;uid=testuser;pwd=xxx");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-8SN80FP; Database=CampgroundDb;uid=sa;pwd=12345");
         }
         public DbSet<Campground> Campgrounds { get; set; }
     }

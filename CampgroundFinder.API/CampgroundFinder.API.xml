@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CampgroundFinder.API</name>
+    </assembly>
+    <members>
+        <member name="M:CampgroundFinder.API.Controllers.CampgroundsController.Get">
+            <summary>
+            Kamp lokasyonlarının hepsini getirir.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CampgroundFinder.API.Controllers.CampgroundsController.Get(System.Int32)">
+            <summary>
+            Kamp lokasyonunu id ye göre getirir.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CampgroundFinder.API.Controllers.CampgroundsController.Post(CampgroundFinder.Entities.Campground)">
+            <summary>
+            Kamp lokasyonunu post eder.
+            </summary>
+            <param name="campground"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CampgroundFinder.API.Controllers.CampgroundsController.Put(CampgroundFinder.Entities.Campground)">
+            <summary>
+            Kamp lokasyonu güncelleme metodu.
+            </summary>
+            <param name="campground"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CampgroundFinder.API.Controllers.CampgroundsController.Delete(System.Int32)">
+            <summary>
+            Kamp lokasyonunu siler.
+            </summary>
+            <param name="id"></param>
+        </member>
+    </members>
+</doc>

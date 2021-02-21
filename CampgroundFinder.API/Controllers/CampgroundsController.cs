@@ -19,26 +19,49 @@ namespace CampgroundFinder.API.Controllers
         {
             _campgroundService = campgroundService; //dependency injection
         }
+        /// <summary>
+        /// Kamp lokasyonlarının hepsini getirir.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public List<Campground> Get()
         {
             return _campgroundService.GetAllCampgrounds();
         }
+        /// <summary>
+        /// Kamp lokasyonunu id ye göre getirir.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public Campground Get(int id)
         {
             return _campgroundService.GetCampgroundById(id);
         }
+        /// <summary>
+        /// Kamp lokasyonunu post eder.
+        /// </summary>
+        /// <param name="campground"></param>
+        /// <returns></returns>
         [HttpPost]
         public Campground Post([FromBody]Campground campground)
         {
             return _campgroundService.CreateCampground(campground);
         }
+        /// <summary>
+        /// Kamp lokasyonu güncelleme metodu.
+        /// </summary>
+        /// <param name="campground"></param>
+        /// <returns></returns>
         [HttpPut]
         public Campground Put([FromBody] Campground campground)
         {
             return _campgroundService.UpdateCampground(campground);
         }
+        /// <summary>
+        /// Kamp lokasyonunu siler.
+        /// </summary>
+        /// <param name="id"></param>
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

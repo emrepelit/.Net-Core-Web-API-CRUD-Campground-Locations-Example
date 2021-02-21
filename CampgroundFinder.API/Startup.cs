@@ -23,6 +23,18 @@ namespace CampgroundFinder.API
             services.AddControllers();
             services.AddSingleton<ICampgroundService, CampgroundManager>();
             services.AddSingleton<ICampgroundRepository, CampgroundRepository>();
+            services.AddSwaggerDocument(config => {
+                config.PostProcess = (doc => {
+                    doc.Info.Title = "Campground Locations Api";
+                    doc.Info.Version = "1.1.3";
+                    //doc.Info.Contact = new NSwag.OpenApiContact()
+                    //{
+                    //    Name = "Emre Pelit",
+                    //    Url = "linkedin.com/in/emrepelit",
+                    //    Email = "emre.pelit@outlook.com"
+                    //};
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,7 +46,8 @@ namespace CampgroundFinder.API
             }
 
             app.UseRouting();
-
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
